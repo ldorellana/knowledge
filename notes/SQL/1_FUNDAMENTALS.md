@@ -27,7 +27,7 @@ FROM {table};
 
 ***COUNT DISTINCT***
 ```sql
-SELECT COUNT(DISCTINCT {field}) 
+SELECT COUNT(DISTINCT {field}) 
 FROM {table};
 
 ```
@@ -39,7 +39,7 @@ FROM {table};
 `<`   less
 `>`   more
 `<=`  less or equal
-`>=`  more or eual
+`>=`  more or equal
 
 **WHERE**
 ```sql
