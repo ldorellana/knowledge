@@ -1,9 +1,6 @@
-# NOTES
+### COMMANDS
 
-
-## COMMANDS
-
-### SELECTING FIELDS
+## SELECTING FIELDS
 
 **SELECT**
 ```sql
@@ -32,7 +29,7 @@ FROM {table};
 
 ```
 
-### FILTERING RESULTS
+## FILTERING RESULTS
 
 `=`   equal
 `<>`  not equal
@@ -98,7 +95,7 @@ FROM {table}
 WHERE {field} LIKE/NOT LIKE {value with widlcard};
 ```
 
-### AGGREGATE FUNCTIONS
+## AGGREGATE FUNCTIONS
 
 - *AVG*
 - *SUM*
@@ -110,7 +107,7 @@ WHERE {field} LIKE/NOT LIKE {value with widlcard};
 SELECT {AGGF}(field)
 FROM {table};
 ```
-### ARITHMETIC FUNCTIONS
+## ARITHMETIC FUNCTIONS
 
 - `+ - * /`
 - *ABS(n)*
@@ -122,22 +119,22 @@ FROM {table};
 - *SQRT(N)*
 
 
-*\ divison is normally integer results  
+* divison is normally integer results  
 At least a number needs to have decimals
 ```sql
 SELECT (4.0 / 3.0)
 ```
 
-### ALIAS
+## ALIAS
 
 **AS** 
-*\ it can be omited and just leave a space
+* it can be omited and just leave a space
 ```sql
 SELECT ({f1} {function} {f2}) [AS] {new_name}
 FORM {table}
 ```
 
-### ORDER BY
+## ORDER BY
 `DESC` to change the order
 Multiple columns can be used 
 ```sql
@@ -146,8 +143,8 @@ FROM {table}
 ORDER BY {field, .. field} [DESC]
 ```
 
-### GROUP BY
-*\ always after the `FROM` clause
+## GROUP BY
+* always after the `FROM` clause
 ```sql
 SELECT {field}, AGGF({field})
 FROM {table}
