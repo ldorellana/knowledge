@@ -1,5 +1,6 @@
 # COMMANDS
 
+
 ## SELECTING FIELDS
 
 **SELECT**
@@ -19,15 +20,14 @@ FROM {table};
 ```sql
 SELECT COUNT(*) 
 FROM {table};
-
 ```
 
 ***COUNT DISTINCT***
 ```sql
 SELECT COUNT(DISTINCT {field}) 
 FROM {table};
-
 ```
+
 
 ## FILTERING RESULTS
 
@@ -95,6 +95,7 @@ FROM {table}
 WHERE {field} LIKE/NOT LIKE {value with widlcard};
 ```
 
+
 ## AGGREGATE FUNCTIONS
 
 - *AVG*
@@ -107,6 +108,8 @@ WHERE {field} LIKE/NOT LIKE {value with widlcard};
 SELECT {AGGF}(field)
 FROM {table};
 ```
+  
+  
 ## ARITHMETIC FUNCTIONS
 
 - `+ - * /`
@@ -124,7 +127,8 @@ At least a number needs to have decimals
 ```sql
 SELECT (4.0 / 3.0)
 ```
-
+  
+  
 ## ALIAS
 
 **AS** 
@@ -133,7 +137,8 @@ SELECT (4.0 / 3.0)
 SELECT ({f1} {function} {f2}) [AS] {new_name}
 FORM {table}
 ```
-
+  
+    
 ## ORDER BY
 `DESC` to change the order
 Multiple columns can be used 
@@ -142,7 +147,8 @@ SELECT {field}
 FROM {table}
 ORDER BY {field, .. field} [DESC]
 ```
-
+  
+    
 ## GROUP BY
 * always after the `FROM` clause
 ```sql
@@ -150,7 +156,8 @@ SELECT {field}, AGGF({field})
 FROM {table}
 GROUP BY {field}
 ```
-
+  
+  
 ### HAVING
 WHERE can't use aggf, but HAVING can
 ```sql
