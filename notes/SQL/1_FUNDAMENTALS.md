@@ -167,8 +167,19 @@ GROUP BY {field}
 HAVING AGGF({field}) {condition} {value}
 ```
 
+### CASE 
+Make groups and give the groups a value
+```sql
+SELECT {field}, {field},
+  CASE WHEN {field} {condition} {value} THEN {value}
+       WHEN {field} {condition} {value} THEN {value}
+       ELSE {VALUE} END
+       AS {field_name}
+FROM table
+ORDER BY {field_name}
+```
 
-
+ 
 
 
 
