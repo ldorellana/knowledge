@@ -32,3 +32,31 @@ FROM {table1}, (SELECT {field}, AGGF({field})
                 ) AS subtable2
 ...
 ```
+
+# SIMPLE SUBQUERIES
+
+`WHERE`
+- The subqueries are only evaluated once
+- Can only return a single column
+
+# COMPLES SUBQUERIES
+
+`FROM`
+- Can return more than one column
+- Can create multiple subqueries in one `FROM` statement
+  - Alias them
+  - Join them (include joining columns fro both)
+- Can join a subquery with a table in  `FROM`
+  - Include joinin columns for both
+
+`SELECT`
+- Must return a single value
+- Filter both query and subquery correctly
+
+# BEST PRACTICES
+
+- FORMAT QUERIES
+  - `SELECT`, `FROM`, `WHERE` and `GROUP BY` with correct order
+  - Annotate the queries /* Query explanation */ or -- inline comment
+  - Properly indent
+  - Make sure all the filters are right in each subquery and the main 
