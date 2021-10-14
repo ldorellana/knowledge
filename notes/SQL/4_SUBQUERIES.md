@@ -39,8 +39,6 @@ FROM {table1}, (SELECT {field}, AGGF({field})
 - The subqueries are only evaluated once
 - Can only return a single column
 
-# COMPLES SUBQUERIES
-
 `FROM`
 - Can return more than one column
 - Can create multiple subqueries in one `FROM` statement
@@ -60,3 +58,40 @@ FROM {table1}, (SELECT {field}, AGGF({field})
   - Annotate the queries /* Query explanation */ or -- inline comment
   - Properly indent
   - Make sure all the filters are right in each subquery and the main 
+
+
+# CORRELATED SUBQUERY
+
+- Uses values from the outer query to generate a result
+- Re-run for every row generated in the final data set
+- Used for: advanced joinin, filtering and evaluating data
+
+# COMMON TABLE EXPRESSIONS CTEs
+
+Table declared before the main query
+
+- CTEs are stores in memory
+- Improves performance
+- Improves organization
+- Reference other CTEs (in order)  
+- Reference itself *recursive CTE* (SELF JOIN)
+
+```sql
+WITH 
+
+{table1} AS (
+  SELECT {field}, {field}
+  FROM {table1}
+  ),
+
+{table2} AS (
+  SELECT {field}, {field}
+  FROM {table1}
+)
+  
+)
+
+SELECT AGGF({field}) AS {new_name}
+FROM cte;
+
+```
