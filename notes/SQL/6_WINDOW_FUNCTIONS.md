@@ -42,7 +42,53 @@ The functions uses the result set to calcualte info, not the DB
 
 - Calculate separete values for different categories
 - Calculate different calculations in the same column
-
+- Partition can have one or more columns (like pandas' groupby)
+- Partition can work with different aggf
 ```sql
 AGGF({field1}) OVER(PARTITION BY {field2})
+```
+# SLIDING WINDOWS
+
+- Calculation relative to the current row
+- running totals, sums, averages, etc
+
+```sql
+ROWS BETWEEN <start> AND <finish>
+```
+
+```sql
+PRECEDING -- no of rows before 
+FOLLOWING -- no of rows after
+UNBOUNDED PRECEDING -- every row since the beginning
+UNBOUNDED FOLLOWING -- every row since the end
+CURRENT ROW -- stop at current row
+```
+
+EXAMPLE
+**RUNNING TOTAL**
+```sql
+SELECT 
+       date,
+       home_goal,
+       away_goal,
+       SUM(home_goal + away_goal) 
+              OVER(ORDER BY date ROWS BETWEEN
+                   UNBOUNDED PRECEDING AND CURRENT ROW)
+           AS runnint_total
+FROM match
+WHERE hometeam_id = xx AND season = xxx
+```
+
+**CURRENT AND PREVIOUS**
+```sql
+SELECT 
+       date,
+       home_goal,
+       away_goal,
+       SUM(home_goal + away_goal) 
+              OVER(ORDER BY date ROWS BETWEEN
+                   1 PRECEDING AND CURRENT ROW)
+           AS last2
+FROM match
+WHERE hometeam_id = xx AND season = xxx
 ```
