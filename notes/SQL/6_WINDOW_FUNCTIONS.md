@@ -51,11 +51,17 @@ AGGF({field1}) OVER(PARTITION BY {field2})
 
 - Calculation relative to the current row
 - running totals, sums, averages, etc
+  
+**ROWS VS RANGE BETWEEN**
+RANGE takes together ROWS that have the same value
+ROWS IS USED MOST OF THE TIME
 
 ```sql
 ROWS BETWEEN <start> AND <finish>
 ```
-
+```sql
+RANGE BETWEEN <start> AND <finish>
+```
 ```sql
 PRECEDING -- no of rows before 
 FOLLOWING -- no of rows after
@@ -92,3 +98,6 @@ SELECT
 FROM match
 WHERE hometeam_id = xx AND season = xxx
 ```
+
+
+`FIRST_ROW`, `LAST_ROW`, `MAX`, `MIN`, `SUM`, `AVG` 
